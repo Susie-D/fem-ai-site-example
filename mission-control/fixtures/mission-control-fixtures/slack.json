@@ -1,0 +1,58 @@
+{
+  "fictional": true,
+  "notice": "Every person, message, channel, and link in this file is fictional workshop data.",
+  "referenceDate": "2026-08-11T09:30:00-05:00",
+  "timeZone": "America/Chicago",
+  "messages": [
+    {
+      "id": "slack-001",
+      "source": "slack",
+      "channel": "#frontend-workshop",
+      "author": "Avery",
+      "sentAt": "2026-08-11T08:12:00-05:00",
+      "text": "The exercise branch is ready. Can you check the mobile layout before we share the example?",
+      "needsResponse": true,
+      "url": "https://example.com/workshop/messages/frontend-layout"
+    },
+    {
+      "id": "slack-002",
+      "source": "slack",
+      "channel": "#creative-assets",
+      "author": "Jordan",
+      "sentAt": "2026-08-11T08:34:00-05:00",
+      "text": "I can export the transparent speaker portraits by noon. Which aspect ratio should I use?",
+      "needsResponse": true,
+      "url": "https://example.com/workshop/messages/portraits"
+    },
+    {
+      "id": "slack-003",
+      "source": "slack",
+      "channel": "#community-meetup",
+      "author": "Riley",
+      "sentAt": "2026-08-11T08:47:00-05:00",
+      "text": "The community room is available Thursday; I am waiting on the final accessibility confirmation.",
+      "needsResponse": false,
+      "url": "https://example.com/workshop/messages/meetup-room"
+    },
+    {
+      "id": "slack-004",
+      "source": "slack",
+      "channel": "#developer-video",
+      "author": "Morgan",
+      "sentAt": "2026-08-11T09:05:00-05:00",
+      "text": "The first cut is ready for a quick review before we add captions.",
+      "needsResponse": true,
+      "url": "https://example.com/workshop/messages/video-first-cut"
+    },
+    {
+      "id": "slack-005",
+      "source": "slack",
+      "channel": "#public-docs",
+      "author": "Sam",
+      "sentAt": "2026-08-11T09:18:00-05:00",
+      "text": "I have checked the example links and the public documentation draft is ready for a final pass.",
+      "needsResponse": false,
+      "url": "https://example.com/workshop/messages/docs-links"
+    }
+  ]
+}
