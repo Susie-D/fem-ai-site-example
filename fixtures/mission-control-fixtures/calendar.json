@@ -1,0 +1,58 @@
+{
+  "fictional": true,
+  "notice": "Every event, attendee, meeting, and link in this file is fictional workshop data.",
+  "referenceDate": "2026-08-11T09:30:00-05:00",
+  "timeZone": "America/Chicago",
+  "events": [
+    {
+      "id": "calendar-001",
+      "source": "calendar",
+      "title": "Frontend workshop rehearsal",
+      "startsAt": "2026-08-11T10:00:00-05:00",
+      "endsAt": "2026-08-11T10:40:00-05:00",
+      "attendees": ["Avery", "Jordan"],
+      "location": "Demo room · fictional",
+      "url": "https://example.com/workshop/events/rehearsal"
+    },
+    {
+      "id": "calendar-002",
+      "source": "calendar",
+      "title": "Developer video first-cut review",
+      "startsAt": "2026-08-11T11:30:00-05:00",
+      "endsAt": "2026-08-11T12:00:00-05:00",
+      "attendees": ["Morgan"],
+      "location": "Review room · fictional",
+      "url": "https://example.com/workshop/events/video-review"
+    },
+    {
+      "id": "calendar-003",
+      "source": "calendar",
+      "title": "Quiet focus · polish attendee demo",
+      "startsAt": "2026-08-11T13:00:00-05:00",
+      "endsAt": "2026-08-11T14:30:00-05:00",
+      "attendees": [],
+      "location": "Focus time",
+      "url": "https://example.com/workshop/events/focus-time"
+    },
+    {
+      "id": "calendar-004",
+      "source": "calendar",
+      "title": "Community meetup planning",
+      "startsAt": "2026-08-11T15:00:00-05:00",
+      "endsAt": "2026-08-11T15:30:00-05:00",
+      "attendees": ["Riley", "Sam"],
+      "location": "Planning room · fictional",
+      "url": "https://example.com/workshop/events/meetup-planning"
+    },
+    {
+      "id": "calendar-005",
+      "source": "calendar",
+      "title": "Publish public developer documentation",
+      "startsAt": "2026-08-12T09:30:00-05:00",
+      "endsAt": "2026-08-12T10:00:00-05:00",
+      "attendees": ["Sam"],
+      "location": "Documentation review · fictional",
+      "url": "https://example.com/workshop/events/docs-publish"
+    }
+  ]
+}

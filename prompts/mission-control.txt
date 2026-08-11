@@ -1,0 +1,9 @@
+Create a new folder called `mission-control` and build a site there using Sites.
+
+Build a responsive personal workday dashboard called Mission Control. Use the fictional data in `fixtures/mission-control-fixtures/` and use `assets/mission-control-moodboard.png` as the visual direction. Translate its colours, tactile materials, soft shapes, generous spacing and playful bento composition into a practical interface; use it as art direction, not as a layout to copy.
+
+Include a day-at-a-glance overview with top priorities, messages needing a response, schedule, items waiting on someone else and deadlines. Add a task board with Urgent, To do, Blocked, Backlog and Done columns. Let people filter by source, open task details, create manual tasks, update task status, refresh the fixture data without overwriting manual changes and reset the demo data.
+
+Keep the interface focused, with one clear title per section and no redundant labels or explanatory chrome. Use durable Sites data so tasks persist across reloads. The site must work entirely from the fictional fixtures without real accounts or integrations.
+
+Make it responsive, accessible and polished, then publish it privately with Sites.

@@ -1,0 +1,15 @@
+Create a new site in a folder called `lp-example` using Sites.
+
+Build a landing page for Fern & Clay, a fictional neighbourhood plant shop and working greenhouse in Stoke Newington, London.
+
+Use the `design-ui-with-restraint` and `write-practical-copy` skills.
+
+The page should feel like an old London winter garden: fogged greenhouse glass, weathered brick, aged timber, linen, terracotta pots and small brass details. Use a natural palette dominated by deep greens, with muted terracotta, cream and brass accents. Pair an elegant serif typeface with simple, readable supporting typography.
+
+Keep the design warm, editorial and spacious. It should feel authentic and quaint, like a real independent shop people would want to visit—not a generic lifestyle brand or modern dashboard.
+
+Include a strong greenhouse-led hero, plants currently available, practical plant-care help, small workshops, opening hours, local delivery and complete visit information. Keep the copy concrete and useful.
+
+Generate realistic editorial photography for the page using image generation. Show leafy plants throughout, along with the greenhouse interior, plant benches, a potting workshop and the shopfront. Avoid bright colours, glossy surfaces, excessive decoration and clutter.
+
+Make the page responsive, accessible and polished, then publish it privately with Sites.

@@ -1,0 +1,48 @@
+{
+  "fictional": true,
+  "notice": "Every sender, email, address, and link in this file is fictional workshop data.",
+  "referenceDate": "2026-08-11T09:30:00-05:00",
+  "timeZone": "America/Chicago",
+  "messages": [
+    {
+      "id": "gmail-001",
+      "source": "gmail",
+      "from": "Avery <avery@example.com>",
+      "subject": "Workshop rehearsal checklist",
+      "preview": "Could you confirm that the demo and attendee starter both work without an account?",
+      "receivedAt": "2026-08-11T07:42:00-05:00",
+      "needsResponse": true,
+      "url": "https://example.com/workshop/mail/rehearsal-checklist"
+    },
+    {
+      "id": "gmail-002",
+      "source": "gmail",
+      "from": "Riley <riley@example.com>",
+      "subject": "Community meetup speaker notes",
+      "preview": "Here is the outline for Thursday. Let me know whether the opening should be five or ten minutes.",
+      "receivedAt": "2026-08-11T08:06:00-05:00",
+      "needsResponse": true,
+      "url": "https://example.com/workshop/mail/speaker-notes"
+    },
+    {
+      "id": "gmail-003",
+      "source": "gmail",
+      "from": "Jordan <jordan@example.com>",
+      "subject": "Updated visual asset exports",
+      "preview": "The lilac and cobalt options are attached in the fictional example package.",
+      "receivedAt": "2026-08-11T08:21:00-05:00",
+      "needsResponse": false,
+      "url": "https://example.com/workshop/mail/visual-assets"
+    },
+    {
+      "id": "gmail-004",
+      "source": "gmail",
+      "from": "Sam <sam@example.com>",
+      "subject": "Public pull request ready for review",
+      "preview": "The sample changes include accessible focus states and a small-screen screenshot.",
+      "receivedAt": "2026-08-11T08:54:00-05:00",
+      "needsResponse": true,
+      "url": "https://example.com/workshop/mail/public-pull-request"
+    }
+  ]
+}

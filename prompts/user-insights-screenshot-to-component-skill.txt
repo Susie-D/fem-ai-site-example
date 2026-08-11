@@ -1,0 +1,3 @@
+Use $skill-creator to make a skill called screenshot-to-component for the User Insights project. The idea is that when I give Codex a screenshot, it should recreate that UI as an editable React illustration.
+
+Before it builds anything, it should look through the User Insights code and reuse the actual components, styles, tokens, and icons from the site so the result feels like part of the product instead of something copied from scratch. It should build real UI rather than putting the screenshot on the page, and the result should be responsive, accessible, and easy to edit. Put the skill in user-insights/skills/screenshot-to-component, test it with one real screenshot, and run the project's typecheck and build commands.

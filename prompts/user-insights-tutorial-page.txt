@@ -1,0 +1,22 @@
+Build a simple tutorial webpage that explains how to use the User Insights dashboard. Use the screenshot-to-component skill for each screenshot I attach.
+
+The page is for a new teammate learning the product. Make it a clear editorial walkthrough, not a marketing page, dashboard clone, or slide deck.
+
+Organize the page into three steps:
+
+01 — Insights
+Introduce the overview and show how someone identifies the most important signals first.
+
+02 — Audience growth
+Explain how to read audience change over time and compare the available periods.
+
+03 — Geographic users
+Explain how to use the globe, region controls, and country view to understand where users are active.
+
+
+Use a calm vertical narrative with:
+
+- A short introduction.
+- Visible step numbers and concise explanations.
+- One substantial screenshot-derived illustration per section.
+- Simple anchor navigation so people can move between the three steps.

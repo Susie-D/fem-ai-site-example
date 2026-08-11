@@ -1,0 +1,5 @@
+Can you add a “Where activity is changing” section to User Insights?
+
+It should update with the existing region and 7-day or 28-day controls. Show the fastest-growing country, a small activity trend, and a short list of countries gaining or losing momentum. When someone selects a country, highlight it on the globe.
+
+Before building it, look through the project and reuse the existing state, data helpers, components, styles, and interaction patterns. Keep the globe as the main focus, use the existing fictional data, and check the result on mobile, tablet, and desktop.

@@ -1,0 +1,127 @@
+GOAL
+
+Take the sprite-enhanced “One Turning World” experience to a finished, exhibition-quality level. Preserve the existing full-page composition, persistent globe, five-city sequence, solar navigation, typography, city copy, and abstract visual language.
+
+Continue iterating through real browser inspection until every landmark feels physically integrated into the globe-centered scene.
+
+SPATIAL MOTION
+
+Treat every landmark as an object following a continuous globe-centered 3D orbit:
+
+1. It begins small and genuinely behind the globe.
+2. It approaches one outer limb of the Earth.
+3. Its trajectory clears the globe before it changes to the foreground layer.
+4. It crosses the foreground and becomes the visual focus.
+5. It moves laterally and reveals the next object.
+6. It returns around the opposite limb.
+7. It changes back to the rear layer.
+8. Its opacity softens only after it is safely hidden behind the Earth.
+
+Do not use opacity crossfades as the primary transition. A landmark must never disappear while visibly centered over the globe or in the foreground.
+
+Calculate limb clearance using the globe’s rendered radius and the displayed dimensions of each asset. Large bridges need a wider orbit than narrow towers.
+
+Use explicit rear and foreground compositing layers, with depth hysteresis around the switching threshold so assets do not flicker between layers.
+
+Motion must remain continuous when scrolling in either direction. Reversing scroll should reverse the same physical path rather than triggering a different animation.
+
+CITY OWNERSHIP
+
+At any point, render only the active city’s landmarks and procedural root.
+
+Before a new city becomes active, every landmark from the previous city must already be outside the visible composition or behind the globe. Assets from Cairo must never remain visible in Paris; Paris assets must never appear beside New York before the New York section begins.
+
+Keep one persistent globe instance while city roots change.
+
+ASSET QUALITY AND COMPOSITION
+
+Every generated landmark must remain sharply recognizable and must share the same elevated editorial treatment.
+
+- Cairo’s pyramids and Sphinx should feel like weathered monumental stone, not abstract triangles.
+- Paris should feature a credible Eiffel Tower and an elegant Pont Alexandre III positioned low in the composition.
+- New York must clearly include the Empire State Building, Brooklyn Bridge, and Statue of Liberty.
+- Ushuaia must unmistakably feel like deep winter, with the lighthouse, train, snow, glacial forms, and aurora.
+- Avoid generic floating planets, unexplained blue objects, arbitrary icons, or decorative structures that do not belong to the current city.
+- Bridges should read as horizontal architectural anchors near the lower edge of the globe.
+- Keep landmark sprites structurally credible; reserve procedural 3D geometry for texture and atmosphere.
+- Remove chroma fringes, matte halos, rectangular backgrounds, compression artifacts, and accidental shadows baked into transparent pixels.
+- Regenerate an asset if its silhouette or proportions cannot be corrected through placement alone.
+
+MOTION QUALITY
+
+Use delta-time-based damping for:
+
+- City transitions
+- Sprite movement
+- Globe rotation and recentering
+- Lighting changes
+- Scale and depth
+- Ambient motion
+
+Transitions must remain smooth even after rapid scrolling or clicking between non-adjacent cities. Avoid abrupt velocity changes, snapping, saccades, and delayed asset catch-up.
+
+Keep orbital guide lines behind the globe. They should move continuously and subtly, without stepping, blunt rotation increments, or appearing painted over the Earth.
+
+THE GLOBE
+
+The globe must remain fully visible and never be clipped on either side.
+
+When the city changes:
+
+- Smoothly recenter on the correct real-world coordinates.
+- Maintain all five city markers.
+- Emphasize the current marker with a specific glow.
+- Smoothly interpolate atmosphere, clouds, city lights, surface tint, and rim light.
+- Preserve direct clicking on every city marker.
+
+SOLAR STEPPER
+
+Refine the bottom navigation so its meaning is immediately understandable without explanatory copy:
+
+- Tokyo is visibly sunrise.
+- Paris is visibly the solar zenith.
+- Ushuaia is visibly sunset.
+- The active sun travels continuously with scroll.
+- All city dots sit mathematically on the same solar curve.
+- City names remain visible.
+- Seasons appear on hover or keyboard focus and remain available on touch.
+- Every city dot is clickable.
+- The solar symbols and labels remain elegant, aligned, and unobtrusive.
+- Do not add scene names, state numbers, or extra progress labels.
+
+SEASONAL CLARITY
+
+Communicate seasons through atmosphere and motion rather than large explanatory labels:
+
+- Tokyo: unmistakable spring petals and rose light.
+- Cairo: dry summer gold and heat-like glass.
+- Paris: bronze autumn light and falling leaves.
+- New York: late-autumn coral light transitioning into first snow.
+- Ushuaia: deep-blue winter, abundant snow, ice, aurora, and polar light.
+
+VALIDATION LOOP
+
+Do not stop after a successful build.
+
+Inspect each city at its beginning, middle, and end, then inspect the transition into the next city. Test both forward and reverse movement.
+
+Validate at minimum:
+
+- 390 × 844
+- 768px tablet width
+- 1280 × 720
+- 1440 × 900
+
+For every viewport:
+
+- Check that the globe is fully visible.
+- Check rear-to-front and front-to-rear sprite transitions.
+- Check that no sprite fades over the center of the globe.
+- Check that inactive-city assets are absent.
+- Click every globe marker and every solar city dot.
+- Check sunrise, zenith, and sunset alignment.
+- Check reduced-motion behavior and keyboard focus.
+- Inspect browser console errors and warnings.
+- Run the production build and diff checks.
+
+Use screenshots and live scrolling to refine scale, focal position, orbit clearance, pacing, lighting, and density. Continue until the experience feels fluid, coherent, physically plausible, and visually polished rather than merely technically functional.

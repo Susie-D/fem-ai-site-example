@@ -1,0 +1,5 @@
+Can you take a look at the Tokyo section in A Year in a Day?
+
+The objects are moving, but they stay behind the globe the whole time. In the other cities, they come back in front as they move around it, which is what I want for Tokyo too.
+
+Please reproduce it in the browser, figure out what’s different about Tokyo, and fix the actual issue without breaking the other cities. Check it on mobile, tablet, and desktop when you’re done.
