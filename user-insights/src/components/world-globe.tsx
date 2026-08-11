@@ -4,7 +4,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { UserCity } from "@/data/insights";
 
-export function WorldGlobe({ cities }: { cities: UserCity[] }) {
+export function WorldGlobe({
+  cities,
+  selectedCountry,
+}: {
+  cities: UserCity[];
+  selectedCountry: string | null;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
   const pointerRef = useRef<number | null>(null);
@@ -15,16 +21,36 @@ export function WorldGlobe({ cities }: { cities: UserCity[] }) {
 
   const markers = useMemo(
     () =>
-      cities.map((city, index) => ({
-        location: [city.lat, city.lng] as [number, number],
-        size: Math.max(0.036, Math.min(0.082, 0.034 + city.active / 46000)),
-        color: (index % 4 === 0
-          ? [0.53, 0.96, 0.78]
-          : index % 5 === 0
-            ? [0.47, 0.68, 1]
-            : [0.72, 0.57, 1]) as [number, number, number],
-      })),
-    [cities],
+      cities.map((city, index) => {
+        const isSelected = city.country === selectedCountry;
+        const baseSize = Math.max(
+          0.036,
+          Math.min(0.082, 0.034 + city.active / 46000),
+        );
+
+        return {
+          location: [city.lat, city.lng] as [number, number],
+          size: isSelected
+            ? Math.max(0.105, baseSize * 1.65)
+            : selectedCountry
+              ? baseSize * 0.68
+              : baseSize,
+          color: (isSelected
+            ? [0.53, 0.96, 0.78]
+            : selectedCountry
+              ? [0.37, 0.34, 0.5]
+              : index % 4 === 0
+                ? [0.53, 0.96, 0.78]
+                : index % 5 === 0
+                  ? [0.47, 0.68, 1]
+                  : [0.72, 0.57, 1]) as [number, number, number],
+        };
+      }),
+    [cities, selectedCountry],
+  );
+
+  const selectedCity = cities.find(
+    (city) => city.country === selectedCountry,
   );
 
   useEffect(() => {
@@ -133,6 +159,12 @@ export function WorldGlobe({ cities }: { cities: UserCity[] }) {
           </div>
         )}
       </div>
+      {selectedCity && (
+        <div className="globe-selection" role="status">
+          <span>{selectedCity.flag}</span>
+          <span>{selectedCity.country} highlighted</span>
+        </div>
+      )}
       <div className="globe-controls">
         <span className="drag-hint">
           <Move aria-hidden="true" />

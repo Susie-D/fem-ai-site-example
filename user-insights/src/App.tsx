@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { AudienceChart } from "@/components/audience-chart";
+import { AudienceMomentum } from "@/components/audience-momentum";
 import { GeographicTable } from "@/components/geographic-table";
 import { GlobeSection } from "@/components/globe-section";
 import { InsightsRail } from "@/components/insights-rail";
@@ -9,7 +10,29 @@ import { cities, getCities, type Period, type Region } from "@/data/insights";
 export default function App() {
   const [region, setRegion] = useState<Region>("Everywhere");
   const [period, setPeriod] = useState<Period>("28d");
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const selectedCities = useMemo(() => getCities(region), [region]);
+
+  const handleRegionChange = (nextRegion: Region) => {
+    setRegion(nextRegion);
+    setSelectedCountry((currentCountry) =>
+      currentCountry &&
+      getCities(nextRegion).some((city) => city.country === currentCountry)
+        ? currentCountry
+        : null,
+    );
+  };
+
+  const handleCountrySelect = (country: string) => {
+    setSelectedCountry((currentCountry) =>
+      currentCountry === country ? null : country,
+    );
+    requestAnimationFrame(() => {
+      document
+        .getElementById("world-audience")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  };
 
   return (
     <div className="app-shell" id="overview">
@@ -30,7 +53,8 @@ export default function App() {
             <GlobeSection
               cities={selectedCities}
               region={region}
-              onRegionChange={setRegion}
+              selectedCountry={selectedCountry}
+              onRegionChange={handleRegionChange}
             />
             <div className="analytics-grid">
               <AudienceChart
@@ -39,13 +63,19 @@ export default function App() {
                 onPeriodChange={setPeriod}
               />
               <GeographicTable cities={selectedCities} />
+              <AudienceMomentum
+                cities={selectedCities}
+                period={period}
+                selectedCountry={selectedCountry}
+                onCountrySelect={handleCountrySelect}
+              />
             </div>
           </div>
           <InsightsRail
             cities={selectedCities}
             allCities={cities}
             region={region}
-            onRegionChange={setRegion}
+            onRegionChange={handleRegionChange}
           />
         </div>
         <footer className="dashboard-footer">

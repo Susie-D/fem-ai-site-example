@@ -430,6 +430,31 @@ export function getCountryTotals(selectedCities: UserCity[]) {
     .sort((a, b) => b.users - a.users);
 }
 
+export function getCountryMomentum(
+  period: Period,
+  selectedCities: UserCity[],
+) {
+  const periodDays = period === "7d" ? 7 : period === "28d" ? 28 : 90;
+  const countries = getCountryTotals(selectedCities).map((country) => ({
+    ...country,
+    pace:
+      (Math.pow(1 + country.growth / 100, periodDays / 28) - 1) * 100,
+  }));
+  const benchmark =
+    countries.reduce((sum, country) => sum + country.pace, 0) /
+    Math.max(countries.length, 1);
+
+  return {
+    benchmark,
+    countries: countries
+      .map((country) => ({
+        ...country,
+        momentum: country.pace - benchmark,
+      }))
+      .sort((left, right) => right.pace - left.pace),
+  };
+}
+
 export function getGrowthData(period: Period, selectedCities: UserCity[]) {
   const count = period === "7d" ? 7 : period === "28d" ? 28 : 30;
   const total = selectedCities.reduce((sum, city) => sum + city.users, 0);
