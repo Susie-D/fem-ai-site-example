@@ -7,10 +7,12 @@ import { cn, compactNumber } from "@/lib/utils";
 export function GlobeSection({
   cities,
   region,
+  selectedCountry,
   onRegionChange,
 }: {
   cities: UserCity[];
   region: Region;
+  selectedCountry: string | null;
   onRegionChange: (region: Region) => void;
 }) {
   const total = cities.reduce((sum, city) => sum + city.users, 0);
@@ -20,7 +22,11 @@ export function GlobeSection({
     Math.max(cities.length, 1);
 
   return (
-    <section className="globe-section" aria-label="Worldwide audience overview">
+    <section
+      id="world-audience"
+      className="globe-section"
+      aria-label="Worldwide audience overview"
+    >
       <div className="globe-toolbar">
         <div className="live-indicator">
           <Radio aria-hidden="true" />
@@ -47,7 +53,7 @@ export function GlobeSection({
           ))}
         </div>
       </div>
-      <WorldGlobe cities={cities} />
+      <WorldGlobe cities={cities} selectedCountry={selectedCountry} />
       <div className="globe-summary">
         <div className="worldwide-total">
           <span className="hero-number">{compactNumber(total, 2)}</span>

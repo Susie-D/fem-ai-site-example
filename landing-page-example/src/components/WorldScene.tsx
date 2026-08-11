@@ -407,8 +407,21 @@ export function WorldScene({ activeCity, cityProgress, journeyProgress, onCitySe
       rearScene.add(group);
       return group;
     });
-    const frontRoots = rearRoots.map((group) => {
+    const frontRoots = rearRoots.map((group, cityIndex) => {
       const clone = cloneGroup(group);
+      if (cityIndex === 0) {
+        clone.traverse((child) => {
+          if (child instanceof THREE.Mesh || child instanceof THREE.Points) {
+            const materials = Array.isArray(child.material) ? child.material : [child.material];
+            materials.forEach((frontMaterial) => {
+              frontMaterial.depthTest = false;
+              frontMaterial.depthWrite = false;
+              frontMaterial.needsUpdate = true;
+            });
+            child.renderOrder = 25;
+          }
+        });
+      }
       frontScene.add(clone);
       return clone;
     });
